@@ -1,7 +1,7 @@
 import api from "./axios.js";
 
 const getAllJob = () => {
-    return api.get("/job/get-all-job ");
+    return api.get("/job/get-all-job");
 };
 const getJobUsingId = (id) => {
     return api.get(`/job/get-job/${id}`);
