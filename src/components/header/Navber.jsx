@@ -19,21 +19,25 @@ function Navber() {
                         JobPortal
                     </h1>
                 </Link>
-                <div className=' flex gap-3 '>
+                <div className="hidden sm:flex gap-3 flex-1 max-w-xl items-center">
                     <input
                         type="text"
                         placeholder="Search by job title or company"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
-                        className="border text-gray-500 bg-white px-4 py-2 rounded w-full"
+                        className="border text-gray-700 bg-white px-4 py-2 rounded-2xl w-full"
                     />
-                    <button
+                    <Button
                         onClick={handleSearch}
-                        className="bg-white text-black px-6 py-2 rounded"
+                        sx={{
+                            backgroundColor: 'white',
+                            color: 'black'
+                        }}
+                        variant="contained"
                     >
                         Search
-                    </button>
+                    </Button>
                 </div>
                 <Button
                     onClick={() => navigate('/login')}
