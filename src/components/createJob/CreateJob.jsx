@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { createJob } from '../../api/job.axios'
+import { useNavigate } from "react-router-dom";
+
 
 
 const CreateJob = () => {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         title: "",
         company: "",
@@ -53,6 +57,7 @@ const CreateJob = () => {
                 description: "",
                 applyLink: ""
             });
+            navigate('/admin')
         } catch (error) {
             console.error(error);
             alert(error.response?.data?.message || "Failed to create job");
